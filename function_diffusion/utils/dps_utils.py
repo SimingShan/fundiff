@@ -1,11 +1,3 @@
-import jax.numpy as jnp
-import numpy as np
-import jax
-import math
-from PIL import Image
-import wandb
-from ml_collections import ConfigDict
-
 from functools import partial
 import jax
 import jax.numpy as jnp
@@ -50,7 +42,6 @@ def create_train_state(config, model, tx):
                               ema_step_size=1 - 0.9995,
                               tx=tx)
     return state
-
 
 
 class Diffuser:
