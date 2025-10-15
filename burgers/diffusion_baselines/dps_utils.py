@@ -31,6 +31,6 @@ def get_burgers_res(u, nu=0.001, x0=0.0, x1=1.0, t0=0.0, t1=1.0):
     # second space derivative
     u_xx = (u[:, 1:-1, 2:] - 2 * u[:, 1:-1, 1:-1] + u[:, 1:-1, :-2]) / (dx ** 2)
 
-    res = u_t + u * u_x - nu * u_xx
+    res = u_t + u[:, 1:-1, 1:-1] * u_x - nu * u_xx
     return res
 
