@@ -40,7 +40,7 @@ import jax
 import jax.numpy as jnp
 
 @jax.jit
-def burgers_residual(u, nu=1e-3, x0=0.0, x1=1.0, t0=0.0, t1=1.0):
+def get_burgers_res(u, nu=1e-3, x0=0.0, x1=1.0, t0=0.0, t1=1.0):
     """
     u: (B, nt, nx, C)
     Returns: residual with same shape.
