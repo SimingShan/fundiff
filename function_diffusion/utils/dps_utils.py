@@ -98,12 +98,12 @@ class Diffuser:
 
         return x
 
-    def ddpm_backward(self, params, x_T, rng):
+    def ddpm_backward(self, params, x_T, rng, context=None):
         x = x_T
 
         for t in range(self.steps - 1, -1, -1):
             rng, rng_ = random.split(rng)
-            x = self.ddpm_backward_step(params, x, t, rng_)
+            x = self.ddpm_backward_step(params, x, t, rng_, context=context)
 
         return x
 
