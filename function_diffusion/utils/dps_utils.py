@@ -251,6 +251,7 @@ class Diffuser:
                 x = self.dps_backward_step_with_pde(params, x, t, obs, w_obs / 10, w_pde, rng_)
 
         return x
+        
     @classmethod
     def _linear_schedule(cls, T: int, beta_1=1e-4, beta_T=0.02):
         '''original ddpm paper'''
